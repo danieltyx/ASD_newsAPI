@@ -12,7 +12,8 @@ struct TrackListView: View
 
     
     @EnvironmentObject var searchModel: SearchURLModel
-    @State var results = [NewsStory]()
+    @EnvironmentObject var NewsurlModel: Newsurl
+   // @State var results = [NewsStory]()
     
     static let screenWidth = UIScreen.main.bounds.size.width
     var largeFontSize = 20
@@ -22,10 +23,11 @@ struct TrackListView: View
     {
             List(results, id: \.author)
             { item in
-                
+              
                     HStack
                      {
-                        
+                         
+                         
                          RemoteImageView(url: item.imageUrl)
                             .clipShape(Rectangle())
                             .frame(width: 80, height: 40)
@@ -48,7 +50,7 @@ struct TrackListView: View
                                 .scaledToFit()
                             
                         }
-                         NavigationLink(destination: TrackDetailView())
+                         NavigationLink(destination: TrackDetailView(landmark: item))
                          {
                              
                          }
@@ -113,9 +115,12 @@ struct TrackListView: View
                     {
                         DispatchQueue.main.async
                         {
+                           
                             results = responseDecoder.data
+                            NewsurlModel.newsurl = responseDecoder.data
                             UIApplication.shared.endEditing()
-                            print(responseDecoder.data[0]) //print first news story
+                            print(NewsurlModel.newsurl[0]) //print first news story
+                            
                         }
                     }
             }

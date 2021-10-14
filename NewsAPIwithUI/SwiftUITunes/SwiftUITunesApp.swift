@@ -11,14 +11,14 @@ import SwiftUI
 struct SwiftUITunesApp: App
 {
     @StateObject  var searchModel = SearchURLModel(sTerm: "")
-    //@StateObject  var newsdetail = NewsStory
+    @StateObject  var NewsurlModel = Newsurl(ns:[])
     
     var body: some Scene
     {
         WindowGroup
         {
             ContentView()
-               // .environmentObject(newsdetail)
+                .environmentObject(NewsurlModel)
                 .environmentObject(searchModel)
         }
     }

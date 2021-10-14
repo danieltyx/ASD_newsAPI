@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		21982E6226F3BA9800329FC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21982E6126F3BA9800329FC3 /* Preview Assets.xcassets */; };
 		21982E6A26F3BDFC00329FC3 /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21982E6926F3BDFB00329FC3 /* NewsStory.swift */; };
 		21982E6E26F3C7E000329FC3 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21982E6D26F3C7E000329FC3 /* NewsData.swift */; };
+		4061A8622717AC91000DE2D3 /* Newsurl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4061A8612717AC91000DE2D3 /* Newsurl.swift */; };
+		4061A8642717BACB000DE2D3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4061A8632717BACA000DE2D3 /* ModelData.swift */; };
+		4061A8672717C60D000DE2D3 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 4061A8662717C60D000DE2D3 /* BetterSafariView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,8 @@
 		21982E6326F3BA9800329FC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21982E6926F3BDFB00329FC3 /* NewsStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
 		21982E6D26F3C7E000329FC3 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
+		4061A8612717AC91000DE2D3 /* Newsurl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsurl.swift; sourceTree = "<group>"; };
+		4061A8632717BACA000DE2D3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4061A8672717C60D000DE2D3 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +107,9 @@
 			children = (
 				2190A30E26F979BE0065780C /* SearchURLModel.swift */,
 				21982E6926F3BDFB00329FC3 /* NewsStory.swift */,
+				4061A8612717AC91000DE2D3 /* Newsurl.swift */,
 				21982E6D26F3C7E000329FC3 /* NewsData.swift */,
+				4061A8632717BACA000DE2D3 /* ModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +130,9 @@
 			dependencies = (
 			);
 			name = NewsAPIwithUI;
+			packageProductDependencies = (
+				4061A8662717C60D000DE2D3 /* BetterSafariView */,
+			);
 			productName = SwiftUITunes;
 			productReference = 21982E5726F3BA9500329FC3 /* NewsAPIwithUI.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 21982E4E26F3BA9500329FC3;
+			packageReferences = (
+				4061A8652717C60D000DE2D3 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+			);
 			productRefGroup = 21982E5826F3BA9500329FC3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,7 +196,9 @@
 				2190A30D26F96E800065780C /* TrackListView.swift in Sources */,
 				2190A30B26F967350065780C /* SearchView.swift in Sources */,
 				2190A30926F9628D0065780C /* TrackDetailView.swift in Sources */,
+				4061A8642717BACB000DE2D3 /* ModelData.swift in Sources */,
 				2190A30726F925D30065780C /* RemoteImageView.swift in Sources */,
+				4061A8622717AC91000DE2D3 /* Newsurl.swift in Sources */,
 				21982E6A26F3BDFC00329FC3 /* NewsStory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4061A8652717C60D000DE2D3 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4061A8662717C60D000DE2D3 /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4061A8652717C60D000DE2D3 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21982E4F26F3BA9500329FC3 /* Project object */;
 }

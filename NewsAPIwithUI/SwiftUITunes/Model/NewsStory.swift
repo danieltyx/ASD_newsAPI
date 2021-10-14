@@ -28,4 +28,6 @@ public struct NewsStory: Codable
     var time: String
     var title: String
     var url: String
+  
+    
 }
