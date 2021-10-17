@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2190A30726F925D30065780C /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30626F925D30065780C /* RemoteImageView.swift */; };
-		2190A30926F9628D0065780C /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30826F9628D0065780C /* TrackDetailView.swift */; };
+		2190A30926F9628D0065780C /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30826F9628D0065780C /* NewsDetailView.swift */; };
 		2190A30B26F967350065780C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30A26F967350065780C /* SearchView.swift */; };
-		2190A30D26F96E800065780C /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30C26F96E800065780C /* TrackListView.swift */; };
+		2190A30D26F96E800065780C /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30C26F96E800065780C /* NewsListView.swift */; };
 		2190A30F26F979BE0065780C /* SearchURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190A30E26F979BE0065780C /* SearchURLModel.swift */; };
 		21982E5B26F3BA9500329FC3 /* SwiftUITunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21982E5A26F3BA9500329FC3 /* SwiftUITunesApp.swift */; };
 		21982E5D26F3BA9500329FC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21982E5C26F3BA9500329FC3 /* ContentView.swift */; };
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		2190A30626F925D30065780C /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
-		2190A30826F9628D0065780C /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		2190A30826F9628D0065780C /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		2190A30A26F967350065780C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		2190A30C26F96E800065780C /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
+		2190A30C26F96E800065780C /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		2190A30E26F979BE0065780C /* SearchURLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchURLModel.swift; sourceTree = "<group>"; };
 		21982E5726F3BA9500329FC3 /* NewsAPIwithUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsAPIwithUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21982E5A26F3BA9500329FC3 /* SwiftUITunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITunesApp.swift; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 			children = (
 				2190A30A26F967350065780C /* SearchView.swift */,
 				2190A30626F925D30065780C /* RemoteImageView.swift */,
-				2190A30C26F96E800065780C /* TrackListView.swift */,
-				2190A30826F9628D0065780C /* TrackDetailView.swift */,
+				2190A30C26F96E800065780C /* NewsListView.swift */,
+				2190A30826F9628D0065780C /* NewsDetailView.swift */,
 				21982E5C26F3BA9500329FC3 /* ContentView.swift */,
 			);
 			path = View;
@@ -193,9 +193,9 @@
 				21982E6E26F3C7E000329FC3 /* NewsData.swift in Sources */,
 				21982E5D26F3BA9500329FC3 /* ContentView.swift in Sources */,
 				21982E5B26F3BA9500329FC3 /* SwiftUITunesApp.swift in Sources */,
-				2190A30D26F96E800065780C /* TrackListView.swift in Sources */,
+				2190A30D26F96E800065780C /* NewsListView.swift in Sources */,
 				2190A30B26F967350065780C /* SearchView.swift in Sources */,
-				2190A30926F9628D0065780C /* TrackDetailView.swift in Sources */,
+				2190A30926F9628D0065780C /* NewsDetailView.swift in Sources */,
 				4061A8642717BACB000DE2D3 /* ModelData.swift in Sources */,
 				2190A30726F925D30065780C /* RemoteImageView.swift in Sources */,
 				4061A8622717AC91000DE2D3 /* Newsurl.swift in Sources */,

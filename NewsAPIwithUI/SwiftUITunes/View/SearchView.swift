@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View
 {
-    
+    @State var newsCatagory:String = "science"
     @State var searchTerm: String
     
     @EnvironmentObject var searchModel: SearchURLModel
@@ -19,44 +19,103 @@ struct SearchView: View
         
         NavigationView
         {
-            VStack(alignment: .leading)
+            VStack()
                 {
+                    Spacer()
+                    HStack
+                    {
+                        Spacer()
+                        Image("newslogo")
+                             .resizable()
+                             .aspectRatio(contentMode: .fit)
+                             .frame(width: 300, height: 300, alignment: .center)
+                             .padding()
+                        Spacer()
+                    }
+                    Spacer()
                     
-                   TextField(
-                        "Search",
-                         text: $searchTerm)
-                    .textFieldStyle(RoundedBorderTextFieldStyle()
-                    )
-                    .multilineTextAlignment(.center)
-                
-                   .onChange(of: searchTerm, perform: { value in
-        
-                    searchModel.searchTerm = searchTerm
+                        Text("News 📰")
+                        .font(.custom("Marker Felt", size: 70))
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.trailing)
+                        .foregroundColor(.black)
                     
-                   })
-                    
-                   .padding()
-                   .padding()
+                    Text("WARNING: If you don’t read the newspaper, you’re uninformed. If you read the newspaper, you’re mis-informed. - Mark Twain")
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.black)
+                    Spacer()
+//                   TextField(
+//                        "Search",
+//                         text: $searchTerm)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle()
+//                    )
+//                    .multilineTextAlignment(.center)
+//
+//                   .onChange(of: searchTerm, perform: { value in
+//
+//                    searchModel.searchTerm = searchTerm
+//
+//                   })
+//
+//                   .padding()
+//                   .padding()
                     //Spacer()
                    
-                    NavigationLink(destination: TrackListView())
+                   
+                    
+                    HStack
                     {
-                        let width = UIScreen.main.bounds.width
+                        NavigationLink(destination: NewsListView(newsCatagory: "science"))
+                        {
+                            Text("Science")
+                                        .frame(minWidth: 0, maxWidth: 100)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(50)
+                                        .font(.custom("Marker Felt", size: 30))
+                        }
+                        
+                        NavigationLink(destination: NewsListView(newsCatagory: "world"))
+                        {
+                            Text("World")
+                                        .frame(minWidth: 0, maxWidth: 100)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(50)
+                                        .font(.custom("Marker Felt", size: 30))
+                        }
                        
-                        Text("Search")
-                                    .frame(minWidth: 0, maxWidth: width)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .leading, endPoint: .trailing))
-                                    .cornerRadius(40)
-                                    .font(.title)
+                    
+                        NavigationLink(destination: NewsListView(newsCatagory: "technology"))
+                        {
+                           
+                            Text("Tech")
+                                        .frame(minWidth: 0, maxWidth: 100)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(50)
+                                        .font(.custom("Marker Felt", size: 30))
+                        }
+//                        }
+//                        
+//                    NavigationLink(destination: TrackListView(newsCatagory: newsCatagory))
+//                    {
+//                       
+//                    
+//                    }
+                        
+                        
                     }
                     Spacer()
                     Spacer()
                         .navigationBarHidden(true)
                     
                 }
-                .background(Color.gray)
+                .background(Color.white)
+                .ignoresSafeArea()
                 
         }
         .navigationBarHidden(true)

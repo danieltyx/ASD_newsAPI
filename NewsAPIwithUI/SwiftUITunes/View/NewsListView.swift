@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TrackListView: View
+struct NewsListView: View
 {
 
-    
+    var newsCatagory: String
     @EnvironmentObject var searchModel: SearchURLModel
     @EnvironmentObject var NewsurlModel: Newsurl
    // @State var results = [NewsStory]()
@@ -21,40 +21,42 @@ struct TrackListView: View
     
     var body: some View
     {
-            List(results, id: \.author)
+            List(results, id: \.title)
             { item in
               
+                
                     HStack
                      {
                          
                          
                          RemoteImageView(url: item.imageUrl)
                             .clipShape(Rectangle())
-                            .frame(width: 80, height: 40)
-            
+                            .frame(width: 150, height: 80)
+                            .scaledToFit()
                             .padding()
                            
                         VStack(alignment: .leading)
                         {
                          
                             Text(item.title)
-                                .font(.custom("marker felt", size: setFontType().0, relativeTo: .largeTitle)).bold()
-                                //.frame(width: TrackListView.screenWidth * 0.40, height: 50)
+                                .font(.custom("Arial", size: setFontType().0, relativeTo: .largeTitle)).bold()
+                                   .frame(width: NewsListView.screenWidth * 0.40, height: 120)
+                                .lineLimit(5)
                                 .multilineTextAlignment(.leading)
                                 .scaledToFit()
                             
                             Text(item.author)
-                                .font(.custom("zapfino", size: setFontType().1, relativeTo: .caption))
-                                //.frame(width:TrackListView.screenWidth * 0.40 , height: 40)
-                                .multilineTextAlignment(.center)
+                                .font(.custom("Arial Narrow", size: 15, relativeTo: .caption))
+                                .frame(width:NewsListView.screenWidth * 0.40 , height: 40)
+                                .multilineTextAlignment(.leading)
                                 .scaledToFit()
                             
                         }
-                         NavigationLink(destination: TrackDetailView(landmark: item))
+                         NavigationLink(destination: NewsDetailView(selectedNews: item))
                          {
                              
                          }
-                         .navigationTitle("Tracks")
+                         .navigationTitle("\(newsCatagory) news")
                      }
   
         }
@@ -83,7 +85,7 @@ struct TrackListView: View
     func loadData()
     {
        
-        let urlString = "https://inshortsapi.vercel.app/news?category=science"
+        let urlString = "https://inshortsapi.vercel.app/news?category=" + newsCatagory
         /*all
          national //Indian News only
          business
@@ -138,7 +140,7 @@ struct TrackList_Previews: PreviewProvider
     static var previews: some View
     {
        
-        TrackListView()
+        NewsListView(newsCatagory: "science")
             .environmentObject(SearchURLModel(sTerm: ""))
            
     }
